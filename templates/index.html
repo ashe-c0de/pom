@@ -4,22 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>25</title>
+    <title>Pomodoro Timer</title>
 
     <link rel="stylesheet" href="{{ get_url(path='css/style.css') }}">
 </head>
 
 <body>
+    <div id="days-left" class="days-left"></div>
+
     <main class="timer">
-        <div class="timer__label">FOCUS</div>
-
-        <div id="time" class="timer__time">
-            25:00
+        <div class="timer__frame">
+            <svg class="timer__border" viewBox="0 0 660 620" fill="none">
+                <path d="M 35,18 
+                         L 160,35 L 330,12 L 500,32 L 625,15
+                         L 645,155 L 625,315 L 648,475 L 630,602
+                         L 500,615 L 330,592 L 160,618 L 25,600
+                         L 12,475 L 38,315 L 10,155 Z"
+                      stroke="#edc3ae" stroke-width="1.5" fill="none" opacity="0.5" />
+            </svg>
+            <div class="timer__quote">Time and tide wait for no man.</div>
+            <div class="timer__face">
+                <svg class="timer__progress" viewBox="0 0 200 200">
+                    <circle class="timer__track" cx="100" cy="100" r="90" />
+                    <circle id="progress" class="timer__ring" cx="100" cy="100" r="90" />
+                </svg>
+                <div class="timer__info">
+                    <div class="timer__label">FOCUS</div>
+                    <div id="time" class="timer__time">25:00</div>
+                </div>
+                <button class="timer__option" data-minutes="5">5m</button>
+                <button class="timer__option timer__option--active" data-minutes="25">25m</button>
+                <button class="timer__option" data-minutes="60">60m</button>
+            </div>
+            <button id="skip" class="timer__button">Skip</button>
         </div>
-
-        <button id="start" class="timer__button">
-            Start
-        </button>
     </main>
 
     <script src="{{ get_url(path='js/app.js') }}"></script>
