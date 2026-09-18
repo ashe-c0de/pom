@@ -1,0 +1,4 @@
+base_url = "https://ashe-wiki.github.io/25"
+compile_sass = false
+minify_html = true
+build_search_index = false
